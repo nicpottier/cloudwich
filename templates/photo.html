@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+<div id="container">
+
+  <div class="post">
+    <div class="box header">
+      <a href="/album/{{ photo.album.id }}" class="title">{{ photo.album.title }}</a>
+    </div>
+  </div>
+
+  <div class="column1">
+
+  <div class="photo"><img border="0" src="{{photo.url}}" /></div>
+
+  <div class="post">
+    <div class="box">
+      caption for this photo
+    </div>
+  </div>
+
+  </div>
+  
+  <div class="column2">
+  <div class="post">
+    <div class="box">
+      <a href="/" class="redtitle">home</a>
+      <a href="/albums" class="greentitle">albums</a>
+      <a href="/posts" class="purpletitle">posts</a>
+    </div>
+  </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

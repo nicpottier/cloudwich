@@ -1,0 +1,7 @@
+
+To try things out.  Make sure you have all the required libs installed, then:
+  % cd cloudyp
+  % python manage.py runserver
+
+You should see a version of my site on:
+  http://localhost:8000/

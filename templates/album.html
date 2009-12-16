@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+<div id="container">
+
+  <div class="post">
+    <div class="box header">
+      <a href="/albums" class="title">albums</a>
+    </div>
+  </div>
+
+<div class="column1">
+
+<div class="post">
+  <div class="box">
+<table>
+<tr>
+  <td width="160">
+  <div class="albumThumb"><img src="{{album.thumb}}" border="0"/></div>
+  </td>
+  <td>
+  <div class="albumInfo">
+    <div class="albumTitle"><h1>{{album.title}}</h1></div>
+    <div class="albumDescription">{{album.description}}</div>
+  </div>
+  </td>
+</tr>
+</table>
+
+<div class="photos">
+{% for photo in album.photos %}<a href="/photo/{{ album.id }}/{{ photo.id }}"><img border="0" src="{{photo.thumb}}" /></a></span>{% endfor %}
+</div>
+
+</div>
+</div>
+
+  </div>
+
+<div class="column2">
+  <div class="post">
+    <div class="box">
+      <a href="/" class="redtitle">home</a>
+      <a href="/albums" class="greentitle">albums</a>
+      <a href="/posts" class="purpletitle">posts</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

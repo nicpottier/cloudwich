@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div id="container">
+
+  <div class="post">
+    <div class="box header">
+      <a href="/" class="title">pottier.com</a>
+    </div>
+  </div>
+
+  <div class="column1">
+  {% for post in posts|slice:":10" %}
+  {% include 'includes/post.html' %}
+  {% endfor %}
+  </div>
+
+  <div class="column2">
+
+  <div class="post">
+    <div class="box">
+      <a href="/albums" class="greentitle">albums</a>
+      <a href="/posts" class="purpletitle">posts</a>
+    </div>
+  </div>
+
+  <div class="post">
+    <div class="box">
+      {% for status in statuses|slice:":4" %}
+      <div class="status">{{status.status}}</div>
+      <div class="status_ago">{{status.date|timesince}} ago</div>
+      {% endfor %}
+
+      <a class="info" href="http://www.facebook.com/nicpottier">
+	<div class="left">Facebook</div>
+      </a>
+    </div>
+  </div>
+
+  {% for album in albums|slice:":4" %}
+  <div class="post">
+    <div class="box">
+      <div class="media">
+	<a href="/album/{{album.id}}"><img border="0" src="{{ album.thumb }}" /></a>
+      </div>
+      <a class="info" href="/album/{{album.id}}">
+	<div class="left">
+	  {{ album.title }}
+	</div>
+      </a>
+    </div>
+  </div>
+  {% endfor %}
+
+  </div>
+
+</div>
+
+
+{% endblock %}
