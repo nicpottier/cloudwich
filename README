@@ -1,4 +1,11 @@
 
+Dependencies:
+  Django-1.1.1
+  feedparser-4.1
+  python-tumblr-0.1
+  simplejson-2.0.9
+  gdata-2.0.5
+
 To try things out.  Make sure you have all the required libs installed, then:
   % cd cloudyp
   % python manage.py runserver
