@@ -5,6 +5,7 @@ Dependencies:
   python-tumblr-0.1
   simplejson-2.0.9
   gdata-2.0.5
+  Markdown-2.0
 
 To try things out.  Make sure you have all the required libs installed, then:
   % cd cloudyp

@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 
+{% load markup %}
 
 {% block content %}
 
@@ -23,7 +24,7 @@
   <td>
   <div class="albumInfo">
     <div class="albumTitle"><h1>{{album.title}}</h1></div>
-    <div class="albumDescription">{{album.description}}</div>
+    <div class="albumDescription">{{album.description|markdown|safe}}</div>
   </div>
   </td>
 </tr>
