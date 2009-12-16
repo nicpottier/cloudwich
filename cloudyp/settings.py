@@ -1,13 +1,6 @@
 # Django settings for cloudyp project.
 import os.path
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
-
-ADMINS = ()
-
-MANAGERS = ADMINS
-
 # name of your disqus forum
 DISQUS_FORUM_NAME = 'pottier'
 
@@ -21,6 +14,13 @@ PICASA_USER = 'nicpottier'
 
 # tmblr username
 TUMBLR_USER = 'nicpottier'
+
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+
+ADMINS = ()
+
+MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
 DATABASE_NAME = 'foo.sqlite'             # Or path to database file if using sqlite3.

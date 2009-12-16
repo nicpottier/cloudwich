@@ -12,3 +12,8 @@ To try things out.  Make sure you have all the required libs installed, then:
 
 You should see a version of my site on:
   http://localhost:8000/
+
+Which ought to look exactly like:
+  http://www.pottier.com/
+
+To make it your own, edit the attributes in cloudyp/settings.py
