@@ -9,13 +9,13 @@ body {
      padding: 0;
 }
     
-a img { border-width: 0; }
-a:active,a:focus,input { outline-width: 0; }
+    a img { border-width: 0; }
+    a:active,a:focus,input { outline-width: 0; }
 
-	.media a {
-	  padding: 0px;
-	}
-  
+    .media a {
+      padding: 0px;
+    }
+	  
     #container {
       width: 900px;
       margin: 10px auto;
@@ -130,6 +130,30 @@ a:active,a:focus,input { outline-width: 0; }
           text-decoration: none;
         }
 
+	.clear {
+	  clear: both;
+	}
+
+        .footer {
+          min-height: 18px;
+          min-width: 175px;
+          color: #F1F1F1;
+          font-size: 11px;
+          text-transform: uppercase;
+          line-height: 18px;
+          background: #BCBBAA;
+          padding: 3px 10px;
+	  margin-bottom: 5px;
+          display: block;
+	  text-decoration: none;
+	  text-align: right;
+        }
+
+	.footer a {
+	  text-decoration: none;
+          color: #F1F1F1;
+	}
+	
         .column2 .post a {
           text-decoration: none;
         }
@@ -139,6 +163,7 @@ a:active,a:focus,input { outline-width: 0; }
         margin: 0 10px 0 0;
         overflow: hidden;
         float: left;
+	margin-bottom: 30px;
       }
 
       #container .column2 {
@@ -146,6 +171,7 @@ a:active,a:focus,input { outline-width: 0; }
         margin: 0 10px 0 0;
         overflow: hidden;
         float: left;
+	margin-bottom: 30px;
       }
         
         #container .column1.search {

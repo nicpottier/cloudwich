@@ -19,10 +19,15 @@ var disqus_developer = 1;
   {% block header %}{% endblock %}
   </div>
   <div id="bd">
-  {% block content %}{% endblock %}
+    <div id="container">
+    {% block content %}{% endblock %}
+    <div class="clear"></div>
+      <div class="footer">
+        <a href="/about">About</a>
+      </div>
+    </div>
   </div>
   <div id="ft">
-  {% block footer %}{% endblock %}
   </div>
 </div>
 

@@ -31,6 +31,9 @@ def index(request):
     statuses =  facebook.get_status_feed(settings.FACEBOOK_USER_ID, settings.FACEBOOK_KEY)
     return render_to_response('index.html', locals())
 
+def about(request):
+    return render_to_response('about.html', locals())
+
     
     
     

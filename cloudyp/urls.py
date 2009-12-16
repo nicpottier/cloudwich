@@ -5,7 +5,7 @@ from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
-from cloudyp.views import albums, album, photo, posts, post, index
+from cloudyp.views import albums, album, photo, posts, post, index, about
 
 urlpatterns = patterns('',
     # Example:
@@ -37,5 +37,8 @@ urlpatterns = patterns('',
     (r'^post/(.*)$', post),
 
     # index page
-    (r'^$', index)
+    (r'^$', index),
+  
+    # about page
+    (r'^about$', about)
 )
