@@ -15,11 +15,13 @@
 
   <div class="photo"><img border="0" src="{{photo.url}}" /></div>
 
+  {% if photo.caption %}
   <div class="post">
     <div class="box">
-      caption for this photo
+      {{ photo.caption }}
     </div>
   </div>
+  {% endif %}
 
   </div>
   

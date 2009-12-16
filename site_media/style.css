@@ -356,6 +356,7 @@ a:active,a:focus,input { outline-width: 0; }
 .photos {
   width: 700px;
   padding-top: 10px;
+  clear: both;
 }
 
 .photos img {
@@ -389,18 +390,38 @@ a:active,a:focus,input { outline-width: 0; }
 }
 
 .albumHeader {
-  position: relative;
 }
 
 .albumThumb {
   border: 1px solid #bebdab;
   background: #f2f2ea;
   padding: 15px;
+  float: left;
+  width: 160px;
 }
 
 .albumInfo {
+  position: relative;
   padding-left: 5px;
+  float: left;
+  width: 400px;
 }
+
+.albumDate {
+  color: #FFFFFF;
+  font-size: 10px;
+  font-family: Helvetica;
+  line-height: normal;
+  background: #BCBBAA;
+  margin: 15px 0 0 0;
+  padding: 3px 8px 4px 8px;
+  display: block;
+  overflow: hidden;
+  bottom: 0;
+  position: relative;
+  float: right;
+}
+
 
 h1 {
   margin-top: 0;

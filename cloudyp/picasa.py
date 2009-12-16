@@ -6,6 +6,7 @@ class Album:
     def __init__(self, entry, albumId=None):
         self.title = entry.title.text
         self.url = entry.GetHtmlLink()
+        self.date = entry.timestamp.datetime
         if (albumId):
             self.id = albumId
             self.description = entry.subtitle.text
@@ -21,6 +22,7 @@ class Photo:
 
         if (entry.media.thumbnail.count > 0):
             self.thumb = entry.media.thumbnail[0].url
+            
         self.id = entry.gphoto_id.text
 
 
@@ -63,6 +65,7 @@ def get_photo(user, albumId, photoId):
     photo = Photo()
     photo.url = feed.media.content[0].url;
     photo.id = feed.gphoto_id
+    photo.caption = feed.subtitle.text
 
     photo.album = get_album(user, albumId)
 

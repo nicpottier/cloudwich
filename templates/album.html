@@ -16,19 +16,15 @@
 
 <div class="post">
   <div class="box">
-<table>
-<tr>
-  <td width="160">
+
+<div class="albumHeader">
   <div class="albumThumb"><img src="{{album.thumb}}" border="0"/></div>
-  </td>
-  <td>
   <div class="albumInfo">
     <div class="albumTitle"><h1>{{album.title}}</h1></div>
     <div class="albumDescription">{{album.description|markdown|safe}}</div>
   </div>
-  </td>
-</tr>
-</table>
+  <div class="albumDate">{{album.date|date:"F j, Y"}}</div>
+</div>
 
 <div class="photos">
 {% for photo in album.photos %}<a href="/photo/{{ album.id }}/{{ photo.id }}"><img border="0" src="{{photo.thumb}}" /></a></span>{% endfor %}
