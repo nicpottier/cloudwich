@@ -1,32 +1,15 @@
 {% extends "layout.html" %}
 
+{% block header %}
+<div class="box">
+  <a class="blue bar" href="/albums">albums</a>
+</div>
+{% endblock %}
 
-{% block content %}
-  <div class="post">
-    <div class="box header">
-      <a href="/albums" class="title">albums</a>
-    </div>
+{% block col1 %}
+<div class="space box">
+  <div class="albums">
+{% for album in albums %}<a href="/album/{{album.id}}"><img border="0" src="{{album.thumb}}" /></a>{% endfor %}
   </div>
-
-  <div class="column1">
-  
-  <div class="post">
-    <div class="box">
-      <div class="albums">
-	{% for album in albums %}<a href="/album/{{album.id}}"><img border="0" src="{{album.thumb}}" /></a>{% endfor %}
-      </div>
-    </div>
-  </div>
-
-  </div>
-
-  <div class="column2">
-  <div class="post">
-    <div class="box">
-      <a href="/" class="redtitle">home</a>
-      <a href="/albums" class="greentitle">albums</a>
-      <a href="/posts" class="purpletitle">posts</a>
-    </div>
-  </div>
-  </div>
+</div>
 {% endblock %}

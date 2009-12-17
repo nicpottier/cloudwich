@@ -1,35 +1,18 @@
 {% extends "layout.html" %}
 
+{% block header %}
+<div class="box">
+  <a class="blue bar" href="/album/{{ photo.album.id }}">{{ photo.album.title }}</a>
+</div>
+{% endblock %}
 
-{% block content %}
-  <div class="post">
-    <div class="box header">
-      <a href="/album/{{ photo.album.id }}" class="title">{{ photo.album.title }}</a>
-    </div>
-  </div>
 
-  <div class="column1">
-
-  <div class="photo"><img border="0" src="{{photo.url}}" /></div>
+{% block col1 %}
+  <div class="photo"><img src="{{photo.url}}" /></div>
 
   {% if photo.caption %}
-  <div class="post">
-    <div class="box">
-      {{ photo.caption }}
-    </div>
+  <div class="box space">
+    {{ photo.caption }}
   </div>
   {% endif %}
-
-  </div>
-  
-  <div class="column2">
-  <div class="post">
-    <div class="box">
-      <a href="/" class="redtitle">home</a>
-      <a href="/albums" class="greentitle">albums</a>
-      <a href="/posts" class="purpletitle">posts</a>
-    </div>
-  </div>
-
-  </div>
 {% endblock %}

@@ -2,8 +2,8 @@
 <html>
 
 <head>
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css&2.8.0r4/build/base/base-min.css">
-<link rel="stylesheet" href="/site_media/style.css">
+<link rel="stylesheet" type="text/css" href="/site_media/yui2.css">
+<link rel="stylesheet" type="text/css" href="/site_media/style.css">
 <title>{% block title %}{% endblock %}</title>
 <script>
 var disqus_developer = 1;
@@ -14,20 +14,42 @@ var disqus_developer = 1;
 <body>
 
 
-<div id="doc2">
+<div id="doc870" class="yui-t5">
   <div id="hd">
-  {% block header %}{% endblock %}
+    <div id="header">
+      {% block header %}
+      <div class="box">
+	<a class="blue bar" href="/">pottier.com</a>
+      </div>
+      {% endblock %}
+    </div>
   </div>
   <div id="bd">
-    <div id="container">
-    {% block content %}{% endblock %}
-    <div class="clear"></div>
-      <div class="footer">
-        <a href="/about">About</a>
+    <div id="yui-main">
+      <div class="yui-b">
+	<div id="col1">
+	  {% block col1 %}{% endblock %}
+	</div>
+      </div>
+    </div>
+    <div class="yui-b">
+      <div id="col2">
+	{% block col2 %}
+	<div class="space box">
+	  <a class="red bar" href="/">home</a>
+	  <a class="small_space blue bar" href="/posts">posts</a>
+	  <a class="small_space green bar" href="/albums">albums</a>
+	</div>
+      {% endblock %}
       </div>
     </div>
   </div>
   <div id="ft">
+    <div id="footer">
+      {% block footer %}
+      <a class="brown bar caps" href="/about"><div class="right">about</div></a>
+      {% endblock %}
+    </div>
   </div>
 </div>
 

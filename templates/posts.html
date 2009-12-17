@@ -1,26 +1,15 @@
 {% extends "layout.html" %}
 
+{% block header %}
+<div class="box">
+  <a class="blue bar" href="/posts">posts</a>
+</div>
+{% endblock %}
 
-
-{% block content %}
-  <div class="post">
-    <div class="box header">
-      <a href="/posts" class="title">posts</a>
-    </div>
-  </div>
-
-  <div class="column1">
+{% block col1 %}
+<div class="posts">
 {% for post in posts %}
 {% include 'includes/post.html' %}
 {% endfor %}
-  </div>
-
-<div class="column2">
-  <div class="post">
-    <div class="box">
-      <a href="/" class="redtitle">home</a>
-      <a href="/albums" class="greentitle">albums</a>
-    </div>
-  </div>
 </div>
 {% endblock %}

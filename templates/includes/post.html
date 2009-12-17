@@ -1,26 +1,24 @@
-  <div class="post">
-    <div class="box">
-      {% if post.player %}
-      <div class="media">
-	{{ post.player|safe }}
-      </div>
-      {% endif %}
-      {% if post.title %}
-      <h2>{{ post.title }}</h2>
-      {% endif %}
-      {% if post.link %}
-      <a href="{{ post.link }}">{{ post.link }}</a>
-      {% endif %}
-      {{ post.body|safe }}
-      <a class="info" href="/post/{{ post.id }}">
-	<div class="left">
-	  {{ post.date }}
-	</div>
-	<div class="right">
-	  {% if post.comment_count %}
-	  {{ post.comment_count }} comment{{ post.comment_count|pluralize }}
-	  {% endif %}
-	</div>
-      </a>
-    </div>
+<div class="space box post post_type_{{ post.type }}">
+  {% if post.player %}
+  <div class="post_media">
+    {{ post.player|safe }}
   </div>
+  {% endif %}
+  {% if post.title %}
+  <h2 class="post_title">{{ post.title }}</h2>
+  {% endif %}
+  {% if post.link %}
+  <a class="post_link" href="{{ post.link }}">{{ post.link }}</a>
+  {% endif %}
+  <div class="post_body">
+    {{ post.body|safe }}
+  </div>
+  <a class="bar brown" href="/post/{{ post.id }}">
+    <div class="left">{{ post.date }}</div>
+    <div class="right">
+      {% if post.comment_count %}
+      {{ post.comment_count }} comment{{ post.comment_count|pluralize }}
+      {% endif %}
+    </div>
+  </a>
+</div>

@@ -2,44 +2,25 @@
 
 {% load markup %}
 
-{% block content %}
+{% block header %}
+<div class="box">
+  <a class="blue bar" href="/albums">albums</a>
+</div>
+{% endblock %}
 
-  <div class="post">
-    <div class="box header">
-      <a href="/albums" class="title">albums</a>
+{% block col1 %}
+<div class="space box">
+  <div class="albumHeader">
+    <div class="albumThumb"><img src="{{album.thumb}}" border="0"/></div>
+    <div class="albumInfo">
+      <div class="albumTitle"><h1>{{album.title}}</h1></div>
+      <div class="albumDescription">{{album.description|markdown|safe}}</div>
     </div>
+    <div class="albumDate">{{album.date|date:"F j, Y"}}</div>
   </div>
 
-<div class="column1">
-
-<div class="post">
-  <div class="box">
-
-<div class="albumHeader">
-  <div class="albumThumb"><img src="{{album.thumb}}" border="0"/></div>
-  <div class="albumInfo">
-    <div class="albumTitle"><h1>{{album.title}}</h1></div>
-    <div class="albumDescription">{{album.description|markdown|safe}}</div>
+  <div class="photos">
+    {% for photo in album.photos %}<a href="/photo/{{ album.id }}/{{ photo.id }}"><img border="0" src="{{photo.thumb}}" /></a></span>{% endfor %}
   </div>
-  <div class="albumDate">{{album.date|date:"F j, Y"}}</div>
 </div>
-
-<div class="photos">
-{% for photo in album.photos %}<a href="/photo/{{ album.id }}/{{ photo.id }}"><img border="0" src="{{photo.thumb}}" /></a></span>{% endfor %}
-</div>
-
-</div>
-</div>
-
-  </div>
-
-<div class="column2">
-  <div class="post">
-    <div class="box">
-      <a href="/" class="redtitle">home</a>
-      <a href="/albums" class="greentitle">albums</a>
-      <a href="/posts" class="purpletitle">posts</a>
-    </div>
-  </div>
-
 {% endblock %}
