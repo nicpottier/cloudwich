@@ -16,8 +16,8 @@
 
   <div class="box space facebook">
     {% for status in statuses|slice:":4" %}
-    <div class="status">{{status.status}}</div>
-    <div class="status_ago">{{status.date|timesince}} ago</div>
+    <div class="status">{{ status.status }}</div>
+    <div class="status_ago">{{ status.date|timesince }} ago</div>
     {% endfor %}
 
     <a class="brown bar" href="http://www.facebook.com/nicpottier">Facebook</a>
@@ -26,9 +26,9 @@
   {% for album in albums|slice:":4" %}
   <div class="box space album_tease">
     <div class="album_thumb">
-      <a href="/album/{{album.id}}"><img border="0" src="{{ album.thumb }}" /></a>
+      <a href="/album/{{ album.id }}/{{ album.title|urlencode }}"><img border="0" src="{{ album.thumb }}" /></a>
     </div>
-    <a class="brown bar" href="/album/{{album.id}}">{{ album.title }}</a>
+    <a class="brown bar" href="/album/{{ album.id }}">{{ album.title }}</a>
   </div>
   {% endfor %}
 {% endblock %}

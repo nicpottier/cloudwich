@@ -18,7 +18,7 @@ def photo(request, albumId, photoId):
     return render_to_response('photo.html', locals())
 
 def posts(request):
-    posts = tumbler.get_posts(settings.TUMBLR_USER)
+    posts = tumbler.get_posts(settings.TUMBLR_USER, settings.DISQUS_FORUM_NAME)
     return render_to_response('posts.html', locals())
 
 def post(request, postId):

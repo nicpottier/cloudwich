@@ -9,7 +9,7 @@
 {% block col1 %}
 <div class="space box">
   <div class="albums">
-{% for album in albums %}<a href="/album/{{album.id}}"><img border="0" src="{{album.thumb}}" /></a>{% endfor %}
+{% for album in albums %}<a href="/album/{{ album.id }}/{{ album.title|urlencode }}"><img border="0" src="{{album.thumb}}" /></a>{% endfor %}
   </div>
 </div>
 {% endblock %}

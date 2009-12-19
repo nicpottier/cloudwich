@@ -22,19 +22,19 @@ urlpatterns = patterns('',
     # (r'^admin/', include(admin.site.urls)),
 
     # displays all our albums
-    (r'^albums/', albums),
+    (r'^albums/$', albums),
 
     # single album with id passed in
-    (r'^album/(.*)$', album),
+    (r'^album/(\d+)/.*$', album),
 
     # single photo
-    (r'^photo/(.*?)/(.*)$', photo),
+    (r'^photo/(\d+)/(\d+)$', photo),
 
     # all posts
     (r'^posts/$', posts),
 
     # single post
-    (r'^post/(.*)$', post),
+    (r'^post/(\d+)/.*$', post),
 
     # index page
     (r'^$', index),

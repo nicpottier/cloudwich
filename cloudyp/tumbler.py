@@ -1,12 +1,13 @@
 from tumblr import Api
 import urllib
 import re
+from datetime import datetime 
 
 class Post:
     def __init__(self, entry):
         self.type = entry['type']
         self.url = entry['url']
-        self.date = entry['date']
+        self.date = datetime.strptime(entry['date'], '%a, %d %b %Y %H:%M:%S')
         self.id = entry['id']
 
         if self.type == 'link':

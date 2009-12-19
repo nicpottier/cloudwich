@@ -5,7 +5,7 @@
   </div>
   {% endif %}
   {% if post.title %}
-  <h2 class="post_title">{{ post.title }}</h2>
+  <h2 class="post_title"><a href="/post/{{ post.id }}/{{ post.title|urlencode }}">{{ post.title }}</a></h2>
   {% endif %}
   {% if post.link %}
   <a class="post_link" href="{{ post.link }}">{{ post.link }}</a>
@@ -13,11 +13,13 @@
   <div class="post_body">
     {{ post.body|safe }}
   </div>
-  <a class="bar brown" href="/post/{{ post.id }}">
-    <div class="left">{{ post.date }}</div>
-    <div class="right">
+  <a class="clear bar brown small" href="/post/{{ post.id }}/{{ post.title|urlencode }}">
+    <div class="left">{{ post.date|date:'F j, Y, P' }}</div>
+    <div class="text-right">
       {% if post.comment_count %}
       {{ post.comment_count }} comment{{ post.comment_count|pluralize }}
+      {% else %}
+      &nbsp;
       {% endif %}
     </div>
   </a>
