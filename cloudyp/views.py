@@ -23,6 +23,7 @@ def posts(request):
 
 def post(request, postId):
     post = tumbler.get_post(settings.TUMBLR_USER, postId)
+    disqus_forum = settings.DISQUS_FORUM_NAME;
     return render_to_response('post.html', locals())
 
 def index(request):

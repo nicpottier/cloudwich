@@ -8,4 +8,8 @@
 
 {% block col1 %}
 {% include "includes/post.html" %}
-{% endblock %}
+
+<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/{{ disqus_forum }}/embed.js"></script><noscript><a href="http://disqus.com/forums/{{ disqus_forum }}/?url=ref">View the discussion thread.</a></noscript>
+ {% endblock %}
+
+
