@@ -1,33 +1,11 @@
 {% extends "layout.html" %}
 
-{% block content %}
-  <div class="post">
-    <div class="box header">
-      <a href="/" class="title">Cloudwich</a>
-    </div>
-  </div>
-
-  <div class="column1">
-    <div class="post">
-      <div class="box">
-	<h2>About Cloudwich</h2>
-<p>This site is running Cloudwich.  A simple Django based wrapper around various web services, namely <a href="http://www.picasaweb.com">Picasa</a>, <a href="http://www.tumblr.com">Tumblr</a>, <a href="http://www.facebook.com">Facebook</a> and <a href="http://www.disqus.com">Disqus.</a></p>
-<p>The idea was inspired by the PHP project <a href="http://pubwich.org/">Pubwich</a>, which does a very similar thing using PHP.  Cloudwich wraps things a bit deeper than Pubwich.  But mostly I just wanted to play with Django, so that's why I built Cloudwich.</p>
-<p>The default theme was inspired / stolen (which is it these days) from the fantastic Tumblr theme <a href="http://www.tumblr.com/theme/631">Cavalcade</a> by <a href="http://blog.petervidani.com/">Peter Vidani</a>.</p>
-<p>You can find the source code and build your own Cloudwich site in no time flat, by grabbing the latest version from <a href="http://github.com/nicpottier/cloudwich">github</a>.
-      </div>
-    </div>
-  </div>
-
-  <div class="column2">
-
-  <div class="post">
-    <div class="box">
-      <a href="/" class="redtitle">home</a>
-      <a href="/albums" class="greentitle">albums</a>
-      <a href="/posts" class="purpletitle">posts</a>
-    </div>
-  </div>
-
-  </div>
+{% block col1 %}
+<div class="space box post post_body">
+  <h2>About Cloudwich</h2>
+  <p>This site is running Cloudwich.  A simple Django based wrapper around various web services, namely <a href="http://www.picasaweb.com">Picasa</a>, <a href="http://www.tumblr.com">Tumblr</a>, <a href="http://www.facebook.com">Facebook</a> and <a href="http://www.disqus.com">Disqus.</a></p>
+  <p>The idea was inspired by the PHP project <a href="http://pubwich.org/">Pubwich</a>, which does a very similar thing using PHP.  Cloudwich wraps things a bit deeper than Pubwich.  But mostly I just wanted to play with Django, so that's why I built Cloudwich.</p>
+  <p>The default theme was inspired / stolen (which is it these days) from the fantastic Tumblr theme <a href="http://www.tumblr.com/theme/631">Cavalcade</a> by <a href="http://blog.petervidani.com/">Peter Vidani</a>.</p>
+  <p>You can find the source code and build your own Cloudwich site in no time flat, by grabbing the latest version from <a href="http://github.com/nicpottier/cloudwich">github</a>.
+</div>
 {% endblock %}
