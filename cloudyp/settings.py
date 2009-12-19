@@ -18,10 +18,6 @@ TUMBLR_USER = 'nicpottier'
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-# date formats
-DATE_FORMAT = 'N j, Y'
-DATETIME_FORMAT = 'N j, Y, P'
-
 ADMINS = ()
 
 MANAGERS = ADMINS
@@ -94,6 +90,5 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'django.contrib.admin',
     'django.contrib.markup'
 )
