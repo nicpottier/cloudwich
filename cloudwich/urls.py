@@ -5,7 +5,7 @@ from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
-from cloudyp.views import albums, album, photo, posts, post, index, about
+from cloudwich.views import albums, album, photo, posts, post, index, about
 
 urlpatterns = patterns('',
     # Example:

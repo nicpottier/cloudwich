@@ -8,7 +8,7 @@ Dependencies:
   Markdown-2.0
 
 To try things out.  Make sure you have all the required libs installed, then:
-  % cd cloudyp
+  % cd cloudwich
   % python manage.py runserver
 
 You should see a version of my site on:
@@ -17,4 +17,4 @@ You should see a version of my site on:
 Which ought to look exactly like:
   http://www.pottier.com/
 
-To make it your own, edit the attributes in cloudyp/settings.py
+To make it your own, edit the attributes in cloudwich/settings.py

@@ -1,9 +1,9 @@
 from django.shortcuts import render_to_response
 from django.conf import settings
 
-from cloudyp import picasa
-from cloudyp import tumbler
-from cloudyp import facebook
+from cloudwich import picasa
+from cloudwich import tumbler
+from cloudwich import facebook
 
 def albums(request):
     albums = picasa.get_albums(settings.PICASA_USER)

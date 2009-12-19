@@ -1,4 +1,4 @@
-# Django settings for cloudyp project.
+# Django settings for cloudwich project.
 import os.path
 
 # name of your disqus forum
@@ -76,7 +76,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
-ROOT_URLCONF = 'cloudyp.urls'
+ROOT_URLCONF = 'cloudwich.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
