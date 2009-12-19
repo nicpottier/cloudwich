@@ -14,7 +14,7 @@
     {{ post.body|safe }}
   </div>
   <a class="clear bar brown small" href="/post/{{ post.id }}/{{ post.title|urlencode }}">
-    <div class="left">{{ post.date|date:'F j, Y, P' }}</div>
+    <div class="left">{{ post.date|date:"F j, Y, P" }}</div>
     <div class="text-right">
       {% if post.comment_count %}
       {{ post.comment_count }} comment{{ post.comment_count|pluralize }}
