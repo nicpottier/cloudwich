@@ -278,3 +278,23 @@ a img {
   font-size: 75%;
   padding-bottom: 5px;
 }
+
+/** disqus stylings */
+
+#dsq-comments-title {
+  display: none;
+}
+
+.dsq-options {
+  display: none;
+}
+
+#disqus_thread {
+  margin-top: 10px;
+}
+
+.dsq-dc-logo {
+  display: none;
+}
+
+
