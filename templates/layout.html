@@ -19,7 +19,7 @@ var disqus_developer = 1;
     <div id="header">
       {% block header %}
       <div class="box">
-	<a class="blue bar" href="/">pottier.com</a>
+	<a class="blue bar caps" href="/">pottier.com</a>
       </div>
       {% endblock %}
     </div>
@@ -36,10 +36,12 @@ var disqus_developer = 1;
       <div id="col2">
 	{% block col2 %}
 	<div class="space box">
-	  <a class="red bar" href="/">home</a>
-	  <a class="small_space blue bar" href="/posts">posts</a>
-	  <a class="small_space green bar" href="/albums">albums</a>
+	  <a class="red caps bar" href="/">home</a>
+	  <a class="small_space blue caps bar" href="/posts">posts</a>
+	  <a class="small_space green caps bar" href="/albums">albums</a>
 	</div>
+	{% block extras %}
+	{% endblock %}
       {% endblock %}
       </div>
     </div>

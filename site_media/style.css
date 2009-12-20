@@ -85,22 +85,18 @@ a:active,a:focus,input {
 
 .blue {
     background:#5082B4 none repeat scroll 0 0;
-    text-transform:uppercase;
 }
 
 .red {
     background: #b45050;
-    text-transform:uppercase;
 }
 
 .purple {
     background: #5050B4;
-    text-transform:uppercase;
 }
 
 .green {
     background: #50B482;
-    text-transform:uppercase;
 }
 
 .brown {
@@ -277,6 +273,7 @@ a img {
   font-style: italic;
   font-size: 75%;
   padding-bottom: 5px;
+  line-height: normal;
 }
 
 /** disqus stylings */

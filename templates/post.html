@@ -2,7 +2,7 @@
 
 {% block header %}
 <div class="box">
-  <a class="blue bar" href="/posts">posts</a>
+  <a class="blue caps bar" href="/posts">posts</a>
 </div>
 {% endblock %}
 
@@ -14,6 +14,16 @@
 disqus_url = "{{ post.url }}";
 </script>
 <script type="text/javascript" src="http://disqus.com/forums/{{ disqus_forum }}/embed.js"></script><noscript><a href="http://disqus.com/forums/{{ disqus_forum }}/?url=ref">View the discussion thread.</a></noscript>
- {% endblock %}
+{% endblock %}
+
+{% block extras %}
+{% if post.tags %}
+<div class="space box">
+  {% for tag in post.tags %}
+  <a href="/posts/tag/{{ tag }}" class="small_space purple bar post_tag">#{{ tag }}</a>
+  {% endfor %}
+</div>
+{% endif %}
+{% endblock %}
 
 

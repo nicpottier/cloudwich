@@ -2,14 +2,14 @@
 
 {% block header %}
 <div class="box">
-  <a class="blue bar" href="/albums">albums</a>
+  <a class="blue caps bar" href="/albums">albums</a>
 </div>
 {% endblock %}
 
 {% block col1 %}
 <div class="space box">
   <div class="albums">
-{% for album in albums %}<a href="/album/{{ album.id }}/{{ album.title|urlencode }}"><img border="0" src="{{album.thumb}}" /></a>{% endfor %}
+{% for album in albums %}<a href="/album/{{ album.id }}/{{ album.title|urlencode }}"><img border="0" src="{{album.thumb}}" width="144" height="144" /></a>{% endfor %}
   </div>
 </div>
 {% endblock %}

@@ -4,7 +4,7 @@
 
 {% block header %}
 <div class="box">
-  <a class="blue bar" href="/albums">albums</a>
+  <a class="blue caps bar" href="/albums">albums</a>
 </div>
 {% endblock %}
 
@@ -20,7 +20,7 @@
   </div>
 
   <div class="photos">
-    {% for photo in album.photos %}<a href="/photo/{{ album.id }}/{{ photo.id }}"><img border="0" src="{{photo.thumb}}" /></a></span>{% endfor %}
+    {% for photo in album.photos %}<a href="/photo/{{ album.id }}/{{ photo.id }}"><img border="0" src="{{photo.thumb}}" width="104" height="104" /></a></span>{% endfor %}
   </div>
 </div>
 {% endblock %}

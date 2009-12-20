@@ -9,6 +9,8 @@ class Post:
         self.url = entry['url']
         self.date = datetime.strptime(entry['date'], '%a, %d %b %Y %H:%M:%S')
         self.id = entry['id']
+        if (entry.has_key('tags')):
+            self.tags = entry['tags']
 
         if self.type == 'link':
             self.link = entry['link-url']
