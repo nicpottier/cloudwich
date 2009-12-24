@@ -18,6 +18,9 @@ TUMBLR_USER = 'nicpottier'
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+# cache in memory, for 24 hours
+CACHE_BACKEND = 'locmem://?timeout=86400'
+
 ADMINS = ()
 
 MANAGERS = ADMINS

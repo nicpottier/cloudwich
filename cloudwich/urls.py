@@ -5,7 +5,7 @@ from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
-from cloudwich.views import albums, album, photo, posts, post, index, about
+from cloudwich.views import albums, album, photo, posts, post, index, about, clear
 
 urlpatterns = patterns('',
     # Example:
@@ -40,5 +40,8 @@ urlpatterns = patterns('',
     (r'^$', index),
   
     # about page
-    (r'^about$', about)
+    (r'^about$', about),
+
+    # clears our cache, displays index
+    (r'^clear$', clear)
 )

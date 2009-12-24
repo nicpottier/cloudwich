@@ -2,11 +2,13 @@ import gdata.photos.service
 import gdata.media
 import gdata.geo
 
+from django.core.cache import cache
+
 class Album:
     def __init__(self, entry, albumId=None):
         self.title = entry.title.text
         self.url = entry.GetHtmlLink()
-        self.date = entry.timestamp.datetime
+        self.date = entry.timestamp.datetime()
         if (albumId):
             self.id = albumId
             self.description = entry.subtitle.text
@@ -25,26 +27,33 @@ class Photo:
             
         self.id = entry.gphoto_id.text
 
+def clear_cache():
+    cache.delete('albums')
+    cache.delete('albums_home')
 
 def get_picasa_feed(path):
     gd_client = gdata.photos.service.PhotosService()
     return gd_client.GetFeed(path)
 
-def get_home_albums(user):
-    feed = get_picasa_feed('/data/feed/api/user/%s?kind=album&thumbsize=160c' % user)
-    albums = []
-    for entry in feed.entry[:4]:
-        albums.append(Album(entry))
+def get_albums_for_url(url, key):
+    albums = cache.get(key)
+    
+    if not albums:
+        feed = get_picasa_feed(url)
+        albums = []
+        for entry in feed.entry:
+            albums.append(Album(entry))
+        cache.set(key, albums)
 
     return albums
+
+def get_home_albums(user):
+    return get_albums_for_url('/data/feed/api/user/%s?kind=album&max-results=100&thumbsize=144c' % user, 
+                              'albums_home')
 
 def get_albums(user):
-    feed = get_picasa_feed('/data/feed/api/user/%s?kind=album&max-results=100&thumbsize=144c' % user)
-    albums = []
-    for entry in feed.entry:
-        albums.append(Album(entry))
-
-    return albums
+    return get_albums_for_url('/data/feed/api/user/%s?kind=album&max-results=100&thumbsize=144c' % user,
+                              'albums')
 
 def get_album(user, albumId):
     feed = get_picasa_feed('/data/feed/api/user/%s/albumid/%s?kind=photo&thumbsize=104c' %

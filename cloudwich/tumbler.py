@@ -3,6 +3,8 @@ import urllib
 import re
 from datetime import datetime 
 
+from django.core.cache import cache
+
 class Post:
     def __init__(self, entry):
         self.type = entry['type']
@@ -29,33 +31,41 @@ def get_post(username, postId):
 
     return Post(entry)
 
+def clear_cache():
+    cache.delete('posts')
+
 def get_posts(username, forumName=None):
-    api = Api('%s.tumblr.com' % username)
-    iter = api.read()
+    posts = cache.get('posts')
 
-    query = "?"
-    i=0
-    posts = []
-    for item in iter:
-        post = Post(item)
-        posts.append(post)
-        query = '%surl%d=%s&' % (query, i, urllib.quote(post.url))
-        i = i+1
+    if not posts:
+        api = Api('%s.tumblr.com' % username)
+        iter = api.read()
 
-    # grab our number of comments if appropraite
-    if forumName:
-        f = urllib.urlopen('http://disqus.com/forums/%s/get_num_replies.js%s' % (forumName, query))
-        result = f.read()
+        query = "?"
+        i=0
+        posts = []
+        for item in iter:
+            post = Post(item)
+            posts.append(post)
+            query = '%surl%d=%s&' % (query, i, urllib.quote(post.url))
+            i = i+1
 
-        # find our actual number of replies
-        #    var num_replies = '0,0,0'
-        m = re.search("var num_replies = '(.*?)'", result)
-        if m:
-            counts = m.group(1).split(',')
-            i = 0
-            for post in posts:
-                post.comment_count = counts[i]
-                i = i+1
+        # grab our number of comments if appropraite
+        if forumName:
+            f = urllib.urlopen('http://disqus.com/forums/%s/get_num_replies.js%s' % (forumName, query))
+            result = f.read()
+
+            # find our actual number of replies
+            #    var num_replies = '0,0,0'
+            m = re.search("var num_replies = '(.*?)'", result)
+            if m:
+                counts = m.group(1).split(',')
+                i = 0
+                for post in posts:
+                    post.comment_count = counts[i]
+                    i = i+1
+
+        cache.set('posts', posts)
 
     return posts
 
