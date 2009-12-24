@@ -147,7 +147,7 @@ a:active,a:focus,input {
 .post_body blockquote {
   background-image: url('/site_media/quote.png');
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: left top;
   margin: 0px 0px 0px 0px;
   margin-bottom: .5em;
   margin-left: 0px;
