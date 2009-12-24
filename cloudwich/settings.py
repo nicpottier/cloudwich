@@ -19,7 +19,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 # cache in memory, for 24 hours
-CACHE_BACKEND = 'locmem://?timeout=86400'
+CACHE_BACKEND = 'file:///%s?timeout=86400' % os.path.join(os.path.dirname(__file__), '../cache').replace('\\', '/')
 
 ADMINS = ()
 
