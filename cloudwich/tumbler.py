@@ -34,12 +34,18 @@ def get_post(username, postId):
 def clear_cache():
     cache.delete('posts')
 
-def get_posts(username, forumName=None):
-    posts = cache.get('posts')
+def get_posts(username, forumName=None, tag=None):
+    if not tag:
+        key = 'posts'
+    else:
+        key = 'posts_%s' % tag
 
+    posts = cache.get(key)
+    posts = None
+        
     if not posts:
         api = Api('%s.tumblr.com' % username)
-        iter = api.read()
+        iter = api.read(None, 0, 10, None, tag)
 
         query = "?"
         i=0
@@ -65,7 +71,7 @@ def get_posts(username, forumName=None):
                     post.comment_count = counts[i]
                     i = i+1
 
-        cache.set('posts', posts)
+        cache.set(key, posts)
 
     return posts
 

@@ -21,6 +21,10 @@ def posts(request):
     posts = tumbler.get_posts(settings.TUMBLR_USER, settings.DISQUS_FORUM_NAME)
     return render_to_response('posts.html', locals())
 
+def posts_tagged(request, tag):
+    posts = tumbler.get_posts(settings.TUMBLR_USER, settings.DISQUS_FORUM_NAME, tag)
+    return render_to_response('posts_tagged.html', locals())
+
 def post(request, postId):
     post = tumbler.get_post(settings.TUMBLR_USER, postId)
     disqus_forum = settings.DISQUS_FORUM_NAME;

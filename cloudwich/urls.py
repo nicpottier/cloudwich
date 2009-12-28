@@ -5,7 +5,7 @@ from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
-from cloudwich.views import albums, album, photo, posts, post, index, about, clear
+from cloudwich.views import albums, album, photo, posts, post, index, about, clear, posts_tagged
 
 urlpatterns = patterns('',
     # Example:
@@ -29,6 +29,9 @@ urlpatterns = patterns('',
 
     # single photo
     (r'^photo/(\d+)/(\d+)$', photo),
+
+    # all posts with tag
+    (r'^posts/tag/(\w+)$', posts_tagged),
 
     # all posts
     (r'^posts/$', posts),
