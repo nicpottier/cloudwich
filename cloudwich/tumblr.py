@@ -36,6 +36,17 @@ except ImportError:
 GENERATOR = 'python-tumblr'
 PAGESIZE = 50  
 
+def fetch(url):
+    count = 0;
+    while count < 5:
+        try:
+            response = urlopen(url)
+            return response
+        except HTTPError, e:
+            print "Retry %d" % count
+            count+=1
+
+    raise Exception("Unable to contact tumblr")
 
 class TumblrError(Exception):
 	''' General Tumblr error ''' 
@@ -76,7 +87,7 @@ class TumblrIterator:
                         if self.tag:
                             url += "&tagged=%s" % quote_plus(self.tag)
 
-			response = urlopen(url)
+			response = fetch(url)
 			page = response.read()
 			m = re.match("^.*?({.*}).*$", page,re.DOTALL | re.MULTILINE | re.UNICODE)
 			self.results = simplejson.loads(m.group(1))
@@ -229,7 +240,7 @@ class Api:
 	def read(self, id=None, start=0,max=2**31-1,type=None,tag=None): 
 		if id:
 			url = "http://%s.tumblr.com/api/read/json?id=%s" % (self.name,id)
-			response = urlopen(url)
+			response = fetch(url)
 			page = response.read()
 			m = re.match("^.*?({.*}).*$", page,re.DOTALL | re.MULTILINE )
 			results = simplejson.loads(m.group(1))
