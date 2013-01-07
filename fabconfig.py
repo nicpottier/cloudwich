@@ -1,0 +1,15 @@
+config = dict(      
+    port='8001',
+    app_dir='cloudwich',
+    friendly_name='pottier',
+    name='cloudwich',
+    user='cloudwich',
+    env='env',
+    settings='settings.py.dev',
+    db='cloudwich',
+    db_user='cloudwich',
+    db_host='localhost',
+    prod_db_host='localhost',
+    prod_host='www.pottier.com',
+    custom_domains='www.pottier.com nicpottier.com nicp.me',
+    celery=False)

@@ -1,5 +1,6 @@
 celerybeat-schedule.db
 db
+deploy
 .DS_Store
 smartmin
 sitestatic
