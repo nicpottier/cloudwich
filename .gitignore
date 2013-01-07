@@ -11,8 +11,8 @@ config/settings.py
 env/
 android/.idea/
 android/out/
-textit/settings.py
-textit.db
+cloudwich/settings.py
+cloudwich.db
 android/gen
 android/bin
 deploy

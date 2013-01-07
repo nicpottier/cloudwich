@@ -121,14 +121,14 @@ import os
 SETTINGS_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)))
 
 TEMPLATE_DIRS = (
-    os.path.join(SETTINGS_DIR, '../../templates'),
+    os.path.join(SETTINGS_DIR, '../templates'),
 )
 
-STATIC_ROOT = os.path.join(SETTINGS_DIR, '../../sitestatic')
+STATIC_ROOT = os.path.join(SETTINGS_DIR, '../sitestatic')
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    os.path.join(SETTINGS_DIR, '../../static'),
+    os.path.join(SETTINGS_DIR, '../static'),
 )
 
 
@@ -141,6 +141,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'django.contrib.markup',
+    'gunicorn',
 )
 
 # A sample logging configuration. The only tangible logging
