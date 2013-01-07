@@ -8,19 +8,6 @@ admin.autodiscover()
 from cloudwich.views import albums, album, photo, posts, post, index, about, clear, posts_tagged
 
 urlpatterns = patterns('',
-    # Example:
-    # (r'^foo/', include('foo.foo.urls')),
-
-    # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
-    # to INSTALLED_APPS to enable admin documentation:
-    # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root': settings.MEDIA_ROOT}),
-
-    # Uncomment the next line to enable the admin:
-    # (r'^admin/', include(admin.site.urls)),
-
     # displays all our albums
     (r'^albums/$', albums),
 

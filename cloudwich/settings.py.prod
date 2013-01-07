@@ -74,8 +74,7 @@ MEDIA_URL = ''
 STATIC_ROOT = ''
 
 # URL prefix for static files.
-# Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+STATIC_URL = '/sitestatic/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -113,9 +112,6 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'cloudwich.urls'
-
-# Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'cloudwich.wsgi.application'
 
 import os
 SETTINGS_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)))
