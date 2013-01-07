@@ -1,0 +1,7 @@
+Django
+feedparser
+requests
+simplejson
+gdata
+Markdown
+

@@ -10,6 +10,9 @@
   {% if post.link %}
   <a class="post_link" href="{{ post.link }}">{{ post.link }}</a>
   {% endif %}
+  {% if post.src %}
+  <img src="{{ post.src }}" width="600">
+  {% endif %}
   <div class="post_body">
     {{ post.body|safe }}
   </div>
