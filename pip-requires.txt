@@ -5,4 +5,5 @@ simplejson
 gdata
 Markdown
 gunicorn
+South
 

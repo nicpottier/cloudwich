@@ -141,6 +141,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'django.contrib.markup',
+    'south',
     'gunicorn',
 )
 

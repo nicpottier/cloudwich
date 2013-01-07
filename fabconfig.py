@@ -12,4 +12,5 @@ config = dict(
     prod_db_host='localhost',
     prod_host='www.pottier.com',
     custom_domains='www.pottier.com nicpottier.com nicp.me',
+    repository='ssh://git@github.com/nicpottier/cloudwich.git',
     celery=False)
